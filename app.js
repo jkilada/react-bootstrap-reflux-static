@@ -1,32 +1,42 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
-
 import 'babel/polyfill';
-import React from 'react';
+import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, Link } from "react-router";
 import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-import Location from './core/Location';
 import Layout from './components/Layout';
+import Index from "./pages/index";
 
-const routes = {}; // Auto-generated on build. See tools/lib/routes-loader.js
+// Put central app logic here as this component will always be loaded.
+class App extends Component {
+  render() {
+      return this.props.children;
+  }
+}
 
-const route = async (path, callback) => {
-  const handler = routes[path] || routes['/404'];
-  const component = await handler();
-  await callback(<Layout>{React.createElement(component)}</Layout>);
-};
+//<Route path="login" component={YOUR-LOGIN-COMPONENT}/>
+function requireAuth(nextState, replaceState) {
+  // Implement session validity check here.
+  /* if (!cookie("sessionId"))
+    replaceState({nextPathname: nextState.location.pathname}, "/login"); */
+}
+
+//<Route path="logout" onEnter={logout}/>
+function logout(nextState, replaceState) {
+  // Implement session clearing here.
+  /* if (canUseDOM) {
+    cookie("sessionId", "");
+  }
+  replaceState({nextPathname: nextState.location.pathname}, "/login"); */
+}
 
 function run() {
   const container = document.getElementById('app');
-  Location.listen(location => {
-    route(location.pathname, async (component) => ReactDOM.render(component, container, () => {
-      // Track the page view event via Google Analytics
-      window.ga('send', 'pageview');
-    }));
-  });
+  ReactDOM.render((
+    <Router>
+      <Route path="/" component={App}>
+        <IndexRoute component={Index} onEnter={requireAuth}/>
+      </Route>
+    </Router>), container);
 }
 
 if (canUseDOM) {
@@ -37,5 +47,3 @@ if (canUseDOM) {
     document.addEventListener('DOMContentLoaded', run, false);
   }
 }
-
-export default { route, routes };

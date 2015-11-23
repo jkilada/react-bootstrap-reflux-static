@@ -1,4 +1,4 @@
-# React Static Boilerplate
+# React Static Boilerplate with Reflux, React-Bootstrap and React-Router
 
 [![NPM version](http://img.shields.io/npm/v/generator-react-static.svg?style=flat-square)](https://www.npmjs.com/package/generator-react-static)
 [![NPM downloads](http://img.shields.io/npm/dm/generator-react-static.svg?style=flat-square)](https://www.npmjs.com/package/generator-react-static)
@@ -10,7 +10,6 @@
 
 Visit [demo site](http://react-static.tarkus.me) &nbsp;|&nbsp;
 See [roadmap](https://waffle.io/koistya/react-static-boilerplate) &nbsp;|&nbsp;
-Join [#react-static-boilerplate](https://gitter.im/koistya/react-static-boilerplate) chatroom on Gitter to stay up to date.
 
 ### Features
 
@@ -108,4 +107,4 @@ $ npm install
   * [Learn ES6](https://babeljs.io/docs/learn-es6/), [ES6 Features](https://github.com/lukehoban/es6features#readme)
 
 ---
-Made with ♥ by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) and [contributors](https://github.com/koistya/react-static-boilerplate/graphs/contributors) &nbsp;|&nbsp; MIT License
+Made by Joseph Kilada ([@josephkilada](https://twitter.com/josephkilada)) as an extension of the excellent React Static Boilerplate project by Konstantin Tarkus ([@koistya](https://twitter.com/koistya)) &nbsp;|&nbsp; MIT License

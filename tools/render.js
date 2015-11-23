@@ -35,20 +35,16 @@ function getPages() {
   });
 }
 
-async function renderPage(page, component) {
-  const data = {
-    body: ReactDOM.renderToString(component),
-  };
+async function renderPage(page) {
   const file = join(__dirname, '../build', page.file.substr(0, page.file.lastIndexOf('.')) + '.html');
-  const html = '<!doctype html>\n' + ReactDOM.renderToStaticMarkup(<Html debug={DEBUG} {...data} />);
+  const html = '<!doctype html>\n' + ReactDOM.renderToStaticMarkup(<Html debug={DEBUG} />);
   await fs.mkdir(dirname(file));
   await fs.writeFile(file, html);
 }
 
 export default task(async function render() {
   const pages = await getPages();
-  const { route } = require('../build/app.node');
   for (const page of pages) {
-    await route(page.path, renderPage.bind(undefined, page));
+    renderPage(page);
   }
 });
