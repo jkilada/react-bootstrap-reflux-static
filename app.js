@@ -1,9 +1,8 @@
 import 'babel/polyfill';
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React, { Component } from "react";
+import ReactDOM from "react-dom";
 import { Router, Route, IndexRoute, Link } from "react-router";
-import { canUseDOM } from 'fbjs/lib/ExecutionEnvironment';
-import Layout from './components/Layout';
+import { canUseDOM } from "fbjs/lib/ExecutionEnvironment";
 import Index from "./pages/index";
 
 // Put central app logic here as this component will always be loaded.
@@ -30,7 +29,7 @@ function logout(nextState, replaceState) {
 }
 
 function run() {
-  const container = document.getElementById('app');
+  const container = document.getElementById("app");
   ReactDOM.render((
     <Router>
       <Route path="/" component={App}>
@@ -41,9 +40,9 @@ function run() {
 
 if (canUseDOM) {
   // Run the application when both DOM is ready and page content is loaded
-  if (['complete', 'loaded', 'interactive'].includes(document.readyState) && document.body) {
+  if (["complete", "loaded", "interactive"].includes(document.readyState) && document.body) {
     run();
   } else {
-    document.addEventListener('DOMContentLoaded', run, false);
+    document.addEventListener("DOMContentLoaded", run, false);
   }
 }

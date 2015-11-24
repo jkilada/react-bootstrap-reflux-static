@@ -1,9 +1,9 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component, PropTypes } from "react";
 
 export default class extends Component {
 
   static propTypes = {
-    error: PropTypes.instanceOf(Error),
+    error: PropTypes.instanceOf(Error)
   };
 
   render() {
@@ -13,7 +13,7 @@ export default class extends Component {
         <pre>{
           this.props.error ?
             this.props.error.message + '\n\n' + this.props.error.stack :
-            'A critical error occurred.'
+            "A critical error occurred."
         }</pre>
       </div>
     );

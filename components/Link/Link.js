@@ -1,12 +1,5 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
-
-import React, { Component, PropTypes } from 'react';
-import './Link.scss';
-import Location from '../../core/Location';
+import React, { Component, PropTypes } from "react";
+import Location from "../../core/Location";
 
 function isLeftClickEvent(event) {
   return event.button === 0;
@@ -22,7 +15,7 @@ class Link extends Component {
     to: PropTypes.string.isRequired,
     children: PropTypes.element.isRequired,
     state: PropTypes.object,
-    onClick: PropTypes.func,
+    onClick: PropTypes.func
   };
 
   static handleClick = event => {

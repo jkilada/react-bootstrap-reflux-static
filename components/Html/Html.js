@@ -1,12 +1,6 @@
-/**
- * React Static Boilerplate
- * https://github.com/koistya/react-static-boilerplate
- * Copyright (c) Konstantin Tarkus (@koistya) | MIT license
- */
-
-import React, { PropTypes } from 'react';
-import GoogleAnalytics from '../GoogleAnalytics';
-import config from '../../config';
+import React, { PropTypes } from "react";
+import config from "../../config";
+import "../variables.less";
 
 function Html({ title, description, body, debug }) {
   return (
@@ -23,7 +17,6 @@ function Html({ title, description, body, debug }) {
       </head>
       <body>
         <div id="app" dangerouslySetInnerHTML={{ __html: body }} />
-        <GoogleAnalytics />
       </body>
     </html>
   );
@@ -33,7 +26,7 @@ Html.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
   body: PropTypes.string.isRequired,
-  debug: PropTypes.bool.isRequired,
+  debug: PropTypes.bool.isRequired
 };
 
 export default Html;
