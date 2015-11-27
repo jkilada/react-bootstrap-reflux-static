@@ -111,7 +111,7 @@ const appConfig = merge({}, config, {
     ...(WATCH ? [
       new webpack.HotModuleReplacementPlugin(),
       new webpack.NoErrorsPlugin(),
-    ] : []),
+    ] : [])
   ],
   module: {
     loaders: [
@@ -129,7 +129,7 @@ const appConfig = merge({}, config, {
                   locals: ['module'],
                 }, {
                   transform: 'react-transform-catch-errors',
-                  imports: ['react', 'redbox-react'],
+                  imports: ['react', 'redbox-react']
                 },
               ],
             },
@@ -138,15 +138,11 @@ const appConfig = merge({}, config, {
       }) : JS_LOADER,
       ...config.module.loaders,
       {
-        test: /\.scss$/,
-        loaders: ['style-loader', 'css-loader', 'postcss-loader'],
-      },
-      {
         test: /\.less$/,
         loader: "style!css!less"
-      },
-    ],
-  },
+      }
+    ]
+  }
 });
 
 // Configuration for server-side pre-rendering bundle
@@ -154,7 +150,7 @@ const pagesConfig = merge({}, config, {
   entry: './app.js',
   output: {
     filename: 'app.node.js',
-    libraryTarget: 'commonjs2',
+    libraryTarget: 'commonjs2'
   },
   target: 'node',
   node: {
@@ -174,15 +170,11 @@ const pagesConfig = merge({}, config, {
       JS_LOADER,
       ...config.module.loaders,
       {
-        test: /\.scss$/,
-        loaders: ['css-loader', 'postcss-loader'],
-      },
-      {
         test: /\.less$/,
         loader: "css!less"
-      },
-    ],
-  },
+      }
+    ]
+  }
 });
 
 export default [appConfig, pagesConfig];

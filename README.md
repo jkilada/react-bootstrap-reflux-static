@@ -16,7 +16,7 @@ See [roadmap](https://waffle.io/koistya/react-static-boilerplate) &nbsp;|&nbsp;
 &nbsp; &nbsp; ✓ Generates static `.html` pages from [React](http://facebook.github.io/react/) components<br>
 &nbsp; &nbsp; ✓ Generates routes based on the list of files in the `/pages` folder<br>
 &nbsp; &nbsp; ✓ Next generation JavaScript with [Babel](https://github.com/babel/babel)<br>
-&nbsp; &nbsp; ✓ [Sass](http://sass-lang.com/) syntax for CSS via [postCSS](https://github.com/postcss/postcss) and [precss](https://github.com/jonathantneal/precss)<br>
+&nbsp; &nbsp; ✓ [LESS](http://lesscss.org) syntax for CSS<br>
 &nbsp; &nbsp; ✓ Development web server with [BrowserSync](http://www.browsersync.io) and [React Transform](https://github.com/gaearon/babel-plugin-react-transform)<br>
 &nbsp; &nbsp; ✓ Bundling and optimization with [Webpack](http://webpack.github.io/)<br>
 &nbsp; &nbsp; ✓ [Code-splitting](https://github.com/webpack/docs/wiki/code-splitting) and async chunk loading<br>
@@ -35,7 +35,6 @@ See [roadmap](https://waffle.io/koistya/react-static-boilerplate) &nbsp;|&nbsp;
 │   ├── /blog/                  # Blog post entries example
 │   ├── /404.js                 # Not Found page
 │   ├── /500.js                 # Error page
-│   ├── /about.js               # About Us page
 │   └── /index.js               # Home page
 ├── /static/                    # Static files such as favicon.ico etc.
 ├── /test/                      # Unit and integration tests
